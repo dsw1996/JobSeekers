@@ -3,7 +3,10 @@ Assignment 2:  A web app that uses OAuth Authorization Server and  OAuth Resourc
 
 
 DEPLOYMENT GUIDELINES
-1. Create an empty folder named ‘uploads’ in the project root directory. This location functions as the space to move all the uploads that are to be added to the Google   Drive.
+
+1. Clone the Project Repository
+
+2. Create an empty folder named ‘uploads’ in the project root directory. This location functions as the space to move all the uploads that are to be added to the Google   Drive.
 
 2. Copy the project directory and paste it inside the htdocs folder at the XAMPP installation location.
 

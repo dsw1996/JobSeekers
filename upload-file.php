@@ -160,22 +160,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $client->getAccessToken()) {
                 <p class="warn"><?= $errorMsg; ?></p>
                 <a href='upload-file.php'>Try with diffrent file</a>
             </div>
+
         <?php }else{ ?>
-            <div>
-                <p>Your call was successful! Check your drive for the following files:</p>
+            <div class="container-login100" style="background-image: url('images/bg_3.jpg');">
+            <div class="wrap-login100 p-l-55 p-r-60 p-t-45 p-b-35" style="width: 525px;">
+            <center>
+            <span class="txt1">
+             <strong> Your call was successful! Check your drive for the following files:</strong>
+              </span>
+             <br>
                 <ul>
                     <li><a href="https://drive.google.com/open?id=<?= $result2->id ?>" target="_blank"><?= $result2->name ?></a></li>
                 </ul>
-                <a href='upload-file.php'>Upload more files</a>
+                <br>
+                <a href='upload-file.php' class="login100-form-btn" >Upload more files</a>
+            </center>
             </div>
         <?php } ?>
+
     <?php else: ?>
-        <div class="container-login100" style="background-image: url('images/bg_3.jpg');">
+        <div class="container-login100" style="background-image: url('images/image_6.jpg');">
             <div class="wrap-login100 p-l-55 p-r-60 p-t-45 p-b-35" style="width: 525px;">
                 <form method="POST" enctype="multipart/form-data">
-                    <center> <input  type="file" name="fileToUpload" required="required"> </center>
+                    <center> <input  type="file" name="fileToUpload" required="required"> 
                     <br> <br> 
-                    <input type="submit"  class="login100-form-btn" name="submit" value="Click here to upload two small (1MB) test files" />
+                    <input type="submit"  class="login100-form-btn" name="submit" value="Click here to upload " /></center>
+                    <div class="text-center p-t-20 p-b-20">
+                        <span class="txt1">
+                        <strong> File size should be less that 1 MB</strong>
+                        </span>
+                    </div>
             
                 </form>
             </div>

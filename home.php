@@ -16,7 +16,7 @@
 include_once 'vendor/autoload.php';
 include_once "validation.php";
 
-echo setHeader("");
+
 
 // check for oauth credentials
 if (!$oauth_credentials_file = getOAuthCredentialsFile()) {
@@ -126,24 +126,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $client->getAccessToken()) {
 
 <div class="box">
 
-    <?php if (isset($authUrl)): ?>
-        <div class="container-login100" style="background-image: url('images/bg_2.jpg');">
+        <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
             <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
                 <form class="login100-form validate-form">
                     <span class="login100-form-title p-b-1">
-                    Uploading a file on Google Drive using Google OAuth Token Using PHP
+                    Hello! Welcome to Job Seekers!
                     </span>
 
                     <div class="text-center p-t-57 p-b-50">
                         <span class="txt1">
-                        Warrning! <strong>For upload a photo on google drive first you have to connect with drive. click below link to connect with drive using your gmail account.</strong>
+                        <strong>The online platform to find a job easily...</strong>
                         </span>
                     </div>
 
                     <div class="container-login100-form-btn">
-                        <a class="login100-form-btn"  href='<?= $authUrl ?>'>
-                            <i class="fa fa-google"></i>
-                            &nbsp;	&nbsp; Sign Up with Google
+                        <a class="login100-form-btn"  href='upload-file.php'>
+                            &nbsp;	&nbsp; Get Started
                         </a>
                     </div>
 
@@ -153,33 +151,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $client->getAccessToken()) {
             </div>
         </div>
 
-    <?php elseif($_SERVER['REQUEST_METHOD'] == 'POST'): ?>
-
-        <?php if ($uploadOk == 0){ ?>
-            <div>
-                <p class="warn"><?= $errorMsg; ?></p>
-                <a href='upload-file.php'>Try with diffrent file</a>
-            </div>
-        <?php }else{ ?>
-            <div>
-                <p>Your call was successful! Check your drive for the following files:</p>
-                <ul>
-                    <li><a href="https://drive.google.com/open?id=<?= $result2->id ?>" target="_blank"><?= $result2->name ?></a></li>
-                </ul>
-                <a href='upload-file.php'>Upload more files</a>
-            </div>
-        <?php } ?>
-    <?php else: ?>
-        <div class="container-login100" style="background-image: url('images/bg_3.jpg');">
-            <div class="wrap-login100 p-l-55 p-r-60 p-t-45 p-b-35" style="width: 525px;">
-                <form method="POST" enctype="multipart/form-data">
-                    <center> <input  type="file" name="fileToUpload" required="required"> </center>
-                    <br> <br> 
-                    <input type="submit"  class="login100-form-btn" name="submit" value="Click here to upload two small (1MB) test files" />
-            
-                </form>
-            </div>
-        </div>
-    <?php endif ?>
     
 </div>

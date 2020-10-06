@@ -15,7 +15,7 @@ function setHeader($title)
     <link href='styles/style.css' rel='stylesheet' type='text/css' />
   </head>
   <body>\n";
-    $header_data .= "<a href='upload-file.php'>Back to Home</a>&nbsp;&nbsp;&nbsp;";
+    $header_data .= "<a href='home.php'>Back to Home</a>&nbsp;&nbsp;&nbsp;";
     if(isset($_SESSION['upload_token'])){
         $header_data .= "&nbsp;&nbsp;&nbsp;&nbsp;<a href='upload-file.php?logout=1'>Logout</a>";
     }
